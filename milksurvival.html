@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<table style="border-collapse: collapse; border-color: rgb(136, 136, 136); border-width: 1px;" cellspacing="0" bordercolor="#888" border="1">
+<tbody>
+<tr>
+<td style="width: 200px;">Percentage of Ki67</td>
+<td style="width: 120px;"><input type="text" id="ki67" value=0 size="3" onchange="Cal()"></td>
+</tr>
+<tr>
+<td style="width: 200px;">Percentage of ER</td>
+<td style="width: 60px;"><input type="text" id="er" value=0 size="3" onchange="Cal()"></td>
+</tr>
+<tr>
+<td style="width: 200px;">Presence of LVI</td>
+<td style="width: 60px;"><input type="checkbox" id="lvi" value=0 size="1" onchange="Cal()"></td>
+</tr>
+<tr>
+<td style="width: 200px;">Pathological Stage</td>
+<td style="width: 60px;">
+	<input type="radio" name="ps" value=0 checked="true" onchange="Cal()"/>1<input type="radio" name="ps" value=0.3281315 onchange="Cal()"/>2<input type="radio" name="ps" value=0.730650 onchange="Cal()"/>3
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<label>10-year recurrent rate</label>
+	<input type="text" id="rate" value="6.04%" size="10" readonly="true">
+
+</body>
+
+<script type="text/javascript">
+// log(odd) = -2.744859 +1.173178LVI +0.3281315P2+0.730650P3 -0.008061ER +0.0221992KI67
+
+function GetRadioValue(NAMERADIO){
+	var ThisRadio=document.getElementsByName(NAMERADIO);
+	//alert(ThisRadio.length);
+	for(var i =0; i < ThisRadio.length; i++)
+		if(ThisRadio[i].checked)
+			return ThisRadio[i].value;
+}
+
+function Cal(){
+	var ki = ki67.value;
+	var err = er.value;
+	var lv = lvi.checked;
+	if(ki<0 || ki>100 || isNaN(ki))
+		{rate.value="ki67% error";
+		return 0;}
+	else if(err<0 || err>100 || isNaN(err))
+		{rate.value="er% error";
+		return 0;}
+	else{
+		ki = ki*0.0221992;
+		err = -1*err*0.008061;
+		var lvv = 0;
+		if(lv) lvv=1.173178;
+		var pss = Number(GetRadioValue("ps"));
+		//alert(pss);
+		var odd = -2.744859 +ki +err +lvv +pss;	
+		//alert(odd);	
+		odd = Math.exp(odd);
+		odd = 100*odd/(1+odd);
+		rate.value = odd.toFixed(2)+"%";
+		return 0;
+	}
+}
+</script>
+
+
+
+
+

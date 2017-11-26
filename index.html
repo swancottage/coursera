@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DEFAULT index.html</title>
+</head>
+<body>
+	<header id="TOPLINK">We places thing like abstract, introduction here, 
+		<nav>Here is a quick link inside this page 
+			<a href="#LISTING">listing</a>
+			<a href="#SPECIALCHAR">special character</a>
+			<a href="#LINKING">linking</a>
+		</nav>
+	</header>
+	<h1>Hello World!<a name="hello"></a></h1>
+	<div>div1</div>
+	<span>span1</span>
+	<div>div2 has <div>div 3 in side</div></div>
+	<div>div4 has <span>span2 inside and <span>span4 within</span></span></div>
+
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<h6>h6</h6>
+	<section>
+		<article>
+			section, article are just semantic tag, much like p paragraph
+		</article>
+	</section>
+	<aside>just something additional</aside>
+	<section id="LISTING"> this section show unordered list, ordered list
+		<h2>Geriatric Syndromes</h2>
+		<ul>
+			<li>Insanity</li>
+			<li>Incontinence</li>
+			<li>Immobility</li>
+			<li>Imbalance 
+				<p>increase risk of falling</p>
+			</li>
+			<li>Inatnition</li>
+			<li>Iatrogenic
+				<ul>
+					<li>Side effect</li>
+					<li>Improper dosage</li>
+					<li>Drug-Drug interaction</li>
+					<li>Drug-Food interaction</li>
+				</ul>
+			</li>
+		</ul>
+		<h2>Fellow Name</h2>
+		<ol>
+			<li>Aisawan</li>
+			<li>Rada</li>
+			<li>Saran</li>
+		</ol>
+	</section>
+	<section id="SPECIALCHAR">
+		<h3>Special character input</h3>
+		<ul>
+			<li>&amp;amp; -- &amp;</li>
+			<li>&amp;lt; &amp;le; -- &lt;&le;</li>
+			<li>&amp;gt; &amp;ge; -- &gt;&ge;</li>
+			<li>&amp;copy; -- &copy;</li>
+			<li>&amp;nbsp; -- &nbsp; "a non breaking space will never be wraped, never use for additional spacing"</li>
+			<li>&amp;uarr; &amp;darr; &amp;rarr; &amp;larr; -- &uarr;&darr;&rarr;&larr;</li>
+			<li>&amp;#9744;&amp;#9745;&amp;#9746;--&#9744;&#9745;&#9746;</li>
+		</ul>
+	</section>
+	<!-- COMMENT HERE -->
+	<section id="LINKING"><h3>Make Link with a href</h3>
+		<a href="http://swancottage.wordpress.com" title="My Blog" target="_blank"><span>SWAN COTAGE</span></a>
+		<a href="highercenter.html" title="Higher center">Higher Center</a>
+		<a href="#LISTING"><div>Go to List section</div></a>
+		<a href="#hello"><div>Go to Hello world</div></a>
+		<a href="#TOPLINK">back to the top</a>
+	</section>
+	<section id="IMAGE">
+		<img src="race.jpg" alt="This is way too big">
+		<img src="race.jpg" width="100">
+		<img src="race.jpg" width="100" height="100">
+	</section>
+	<a href="#TOPLINK">back to the top</a>
+	<footer>thx!</footer>
+</body>
+</html>
