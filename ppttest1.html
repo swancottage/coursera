@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>How Poerpoint should looks like</title>
+		<style type="text/css">
+		* {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;        vertical-align: baseline;background: transparent; box-sizing: border-box;
+    }
+			.slide {
+				width: 1200px;
+				height: 750px;
+				font-size: 60px;
+				font-family: helvetica, arial;
+				background-color: #AACCBB;
+			}
+			.Header {
+				background-color: #000055;
+				height: 12%;
+				font-style: bold;
+				font-size: 140%;
+				color: #FFFFFF;
+				padding-left: .5em;
+			}
+			.Body {
+				height: 83%;	
+				background-color: #AAAA00;
+			}
+
+			.C6-12 {
+				width: 50%;
+				height: 100%;
+				padding-left: .5em;
+				background-color: #666666;
+				float: left;
+			}
+
+			.Footer {
+				height: 5%;
+				background-color: #00AAAA;
+				text-align: right;
+				font-style: italic;
+				font-size: 50%;
+				color: #666666;
+				padding-right: .1em;
+
+			}
+
+			@media (min-width: 960px) and (max-width: 1199px){
+				.slide{
+					width: 960px; height: 600px;
+					font-size: 48px;
+				}
+			}
+			@media (min-width: 720px) and (max-width: 959px){
+				.slide{
+					width: 720px; height: 450px;
+					font-size: 36px;
+				}
+			}			
+			@media (min-width: 480px) and (max-width: 719px){
+				.slide{
+					width: 480px; height: 300px;
+					font-size: 24px;
+				}
+			}
+			@media (max-width: 479px){
+				.slide{
+					width: 400px; height: 250px;
+					font-size: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide">
+			<div class="Header">This is title...</div>
+			<div class="Body">
+				<div class="C6-12">
+				This is column 1 with 6 grids occupied. We should see some line drop around here, eint we?
+				</div>
+				<div class="C6-12">
+				1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br> 7
+				</div>
+			</div>
+			<div class="Footer">Created by IceSwan ...</div>
+		</div>
+	</body>
+</html>
